@@ -1,0 +1,50 @@
+class CSV{
+    fecha_evento='';
+    hora='';
+    tipo_de_evento='';
+    coordenada_x=0;
+    coordenada_y=0;
+    colonia='';
+    alcaldia='';
+    tipo_de_interseccion='';
+    tipo_de_vehiculo_1='';
+    tipo_de_vehiculo_2='';
+    tipo_de_vehiculo_3='';
+    tipo_de_vehiculo_4='';
+    marca_de_vehiculo_1='';
+    marca_de_vehiculo_2='';
+    marca_de_vehiculo_3='';
+    marca_de_vehiculo_4='';
+    unidad_medica_de_apoyo='';
+    prioridad='';
+    color_vehiculo_1='';
+    color_vehiculo_2='';
+    color_vehiculo_3='';
+    constructor(json={})
+    {
+        this.fecha_evento=json.fecha_evento;
+        this.hora=json.hora;
+        this.tipo_de_evento=json.tipo_de_evento;
+        this.coordenada_x=json.coordenada_x;
+        this.coordenada_y=json.coordenada_y;
+        this.colonia=json.colonia;
+        this.alcaldia=json.alcaldia;
+        this.tipo_de_interseccion=json.tipo_de_interseccion;
+        this.tipo_de_vehiculo_1=json.tipo_de_vehiculo_1;
+        this.tipo_de_vehiculo_2=json.tipo_de_vehiculo_2;
+        this.tipo_de_vehiculo_3=json.tipo_de_vehiculo_3;
+        this.tipo_de_vehiculo_4=json.tipo_de_vehiculo_4;
+        this.marca_de_vehiculo_1=json.marca_de_vehiculo_1;
+        this.marca_de_vehiculo_2=json.marca_de_vehiculo_2;
+        this.marca_de_vehiculo_3=json.marca_de_vehiculo_3;
+        this.marca_de_vehiculo_4=json.marca_de_vehiculo_4;
+        this.unidad_medica_de_apoyo=json.unidad_medica_de_apoyo;
+        this.prioridad=json.prioridad;
+        this.color_vehiculo_1=json.color_vehiculo_1;
+        this.color_vehiculo_2=json.color_vehiculo_2;
+        this.color_vehiculo_3=json.color_vehiculo_3;
+    }
+    
+
+}
+module.exports=CSV;
