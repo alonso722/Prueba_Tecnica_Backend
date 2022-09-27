@@ -7,4 +7,4 @@ const options ={
 };
 
 mongoose.connect(uri,options)
-    .then(db=>console.log("Ya esta lo de la base de datos")).catch(er=>console.log(er));
+    .then(db=>console.log("Conexion de base de datos MongoDB lista")).catch(er=>console.log(er));

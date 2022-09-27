@@ -9,5 +9,5 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(require('./routes/index.routes'));
 app.use(require('./routes/accidentes.routes'));
-//app.use(require('./routes/libreria.routes'));
+
 module.exports=app;
