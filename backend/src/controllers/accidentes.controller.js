@@ -34,10 +34,10 @@ Accidentescontrolador.consulta_ruta1=(req,res)=>{
 
     Accidentescontrolador.consulta_ruta2=(req,res)=>{
         res.status(200).json({
-            consulta_punto21:"/accidentes/parte1/punto1",//visualizar la mayoria de informacion
-            consulta_punto22:"/accidentes/parte1/punto2",//Enviare 4 datos para insertar un nuevo registro
-            consulta_punto23:"/accidentes/parte1/punto3",
-            consulta_punto24:"/accidentes/parte1/punto4",
+            consulta_punto21:"/accidentes/parte2/punto1",//visualizar la mayoria de informacion
+            consulta_punto22:"/accidentes/parte2/punto2",//Enviare 4 datos para insertar un nuevo registro
+            consulta_punto23:"/accidentes/parte2/punto3",
+            consulta_punto24:"/accidentes/parte2/punto4",
         });
         };
    
@@ -152,10 +152,33 @@ Accidentescontrolador.consulta_ruta1=(req,res)=>{
         
     }
     Accidentescontrolador.consulta_punto22=async(req,res)=>{
-    
+    //Seria solamente por $group ya que match es el filtrado
+        try{
+            let respuesta=await Db_accidentes.aggregate([{$group:{_id:"$alcaldia",Num_Choques:{$sum:1}}}]).sort({Num_Choques: -1}).limit(10);
+            res.status(200).json({respuesta});
+        }catch(error){
+            console.log(error);
+            res.status(400).json({respuesta:"Error"});
+        }
     }
+    // db.orders.aggregate( [
+    //     // Stage 1: Filter pizza order documents by pizza size
+    //     {
+    //        $match: { size: "medium" }
+    //     },
+    //     // Stage 2: Group remaining documents by pizza name and calculate total quantity
+    //     {
+    //        $group: { _id: "$name", totalQuantity: { $sum: "$quantity" } }
+    //     }
+    //  ] )
     Accidentescontrolador.consulta_punto23=async(req,res)=>{
-    
+        try{
+            let respuesta=await Db_accidentes.aggregate([{$group:{_id:"$marca_de_vehiculo_1",Num_Choques:{$sum:1}}}]).sort({Num_Choques: -1}).limit(10);
+            res.status(200).json({respuesta});
+        }catch(error){
+            console.log(error);
+            res.status(400).json({respuesta:"Error"});
+        }
     }
     Accidentescontrolador.consulta_punto24=async(req,res)=>{
         try {
